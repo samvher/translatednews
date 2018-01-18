@@ -31,11 +31,12 @@ docker run -d \
   --volumes-from nginx-proxy \
   jrcs/letsencrypt-nginx-proxy-companion
 
-docker run --name tn --restart=always \
+docker run -d --restart=always \
+  --name tn \
   -e VIRTUAL_HOST=translatethe.news,www.translatethe.news \
   -e LETSENCRYPT_HOST=translatethe.news,www.translatethe.news \
   -e LETSENCRYPT_EMAIL=samvherwaarden@gmail.com \
   -v /home/ec2-user/translatednews/app:/app \
   -v /home/ec2-user/translatednews/data:/data \
-  -d tn
+  tn
 ```
