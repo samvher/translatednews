@@ -1,0 +1,11 @@
+SECRET_KEY = 'sosecret'
+SQLALCHEMY_DATABASE_URI = 'sqlite:////data/db.sqlite'
+SECURITY_PASSWORD_SALT = 'salty'
+
+MAIL_DEFAULT_SENDER = 'info@domain.com'
+MAIL_SERVER = 'smtp.gmail.com'
+MAIL_PORT = 465
+MAIL_USE_TLS = False
+MAIL_USE_SSL = True
+MAIL_USERNAME = 'username'
+MAIL_PASSWORD = 'password'
