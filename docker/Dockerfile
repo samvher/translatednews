@@ -10,7 +10,7 @@ RUN apk add --no-cache bash git nginx uwsgi uwsgi-python3 \
 	&& pip3 install Flask-Principal Flask-WTF \
 	&& pip3 install passlib bcrypt itsdangerous \
 	&& pip3 install git+https://github.com/mattupstate/flask-security.git@develop \
-	&& pip3 install hyper googletrans 
+	&& pip3 install feedparser beautifulsoup4 hyper googletrans 
 
 # local directory structure
 ENV APP_DIR /app
