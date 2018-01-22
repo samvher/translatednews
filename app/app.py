@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_security import Security, SQLAlchemyUserDatastore, \
      UserMixin, RoleMixin
 
+import gnews_translate as gt
+
 # Create app
 app = Flask(__name__)
 
@@ -52,7 +54,13 @@ db.create_all()
 # Views
 @app.route('/')
 def home():
-  return render_template('index.html')
+  my_lang = "en_us"
+
+  result = dict()
+  for r in gt.regions:
+    result[r] = gt.get_news(r, my_lang)
+
+  return render_template('index.html', news=result)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=80)
